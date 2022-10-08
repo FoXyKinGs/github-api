@@ -6,7 +6,7 @@
 }
 
 .container {
-  padding: 20px 100px;
+  padding: 10px 100px;
 }
 
 .head {
@@ -16,19 +16,6 @@
   width: 100%;
   padding: 10px;
   background-color: #202020;
-}
-
-.loading {
-  width: 100%;
-  height: calc(100vh - 70px);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: #333333;
-}
-
-.data-loaded {
-  color: white
 }
 
 .no-data {

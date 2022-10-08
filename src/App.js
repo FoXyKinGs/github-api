@@ -1,5 +1,7 @@
 import { useState } from 'react'
 import SearchInput from './components/SearchInput'
+import SkeletonLoader from './components/SkeletonLoader'
+import Profile from './components/Profile'
 import axios from 'axios'
 import './App.css'
 
@@ -7,8 +9,8 @@ function App() {
 
   const [githubUserData, setGithubUserData] = useState(
     {
-      isLoading: true,
-      isError: false,
+      isLoading: false,
+      isError: true,
       data: {}
     }
   )
@@ -23,6 +25,7 @@ function App() {
       .then(res => {
         setGithubUserData({
           isLoading: false,
+          isError: false,
           data: res.data
         })
       })
@@ -39,7 +42,6 @@ function App() {
     fetchData(e)
   }
 
-  const dataLength = Object.keys(githubUserData.data).length
   return (
     <div id='App'>
       <div className="head">
@@ -48,23 +50,17 @@ function App() {
 
 
       {
-        dataLength > 0 ?
-          githubUserData.isLoading ?
-            (
-            <div className='loading'>
-              Loading
-            </div>
-            ) : (
-            <div className='container data-loaded'>
-              <p>Github Name: { githubUserData.data.name }</p>
-            </div>
-            )
+        githubUserData.isLoading ?
+          <SkeletonLoader />
         :
-          (
-            <div className='no-data'>
-              <p>No Data</p>
-            </div>
-          )
+          githubUserData.isError ?
+            (
+              <div className='no-data'>
+                <p>No Data</p>
+              </div>
+            )
+          :
+          <Profile profile={githubUserData.data} />
       }
     </div>
   )

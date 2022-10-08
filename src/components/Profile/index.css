@@ -1,0 +1,93 @@
+.profile {
+  color: #FFF;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  gap: 5px;
+  display: flex;
+  justify-content: center;
+}
+
+.profile .box {
+  width: 600px;
+  height: 400px;
+  border: 2px solid #333;
+  border-radius: 25px;
+  box-shadow: 10px 15px 30px 1px #333;
+  display: flex;
+  flex-direction: column;
+}
+
+.profile .box .opener {
+  height: 50%;
+  display: flex;
+  padding: 10px;
+}
+
+.profile .box .opener .profile-pic {
+  width: 30%;
+}
+
+.profile .box .opener .profile-pic img {
+  width: 100%;
+  height: 100%;
+  border-radius: 15px;
+}
+
+.profile .box .opener .profile {
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 20px
+}
+
+.profile .box .opener .profile .name {
+  font-size: 21px;
+  font-weight: 700;
+}
+
+.profile .box .opener .profile .location {
+  font-size: 12px;
+  font-weight: 400;
+  display: flex;
+  gap: 5px;
+}
+
+.profile .box .opener .profile .username {
+  font-size: 12px;
+  font-weight: 400;
+}
+
+.profile .box .opener .profile .bio {
+  margin-top: 10px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.profile .box .closer {
+  height: 50%;
+  padding: 20px;
+}
+
+.profile .box .closer p {
+  margin: 10px 0;
+  font-size: 18px;
+  display: flex;
+  gap: 20px;
+}
+
+.profile .box .closer .link {
+  display: flex;
+  justify-content: center;
+}
+
+.profile .box .closer .link a {
+  font-size: 21px;
+  color: #FFF;
+  text-decoration: none;
+}
+
+.profile .box .closer .link a span {
+  margin-left: 10px;
+}
